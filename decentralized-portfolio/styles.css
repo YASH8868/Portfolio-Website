@@ -1,0 +1,301 @@
+/* =======================
+   Base Styles
+========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('./images/background image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* =======================
+   Header & Navigation
+========================== */
+header {
+    background: linear-gradient(45deg, #989cba, #3399e7);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+#updateBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #2c2fdd;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 2;
+    display: none;
+}
+
+#updateBtn:hover {
+    background-color: #e52e71;
+}
+
+/* =======================
+   Section Styles
+========================== */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#about img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px 0;
+    object-fit: cover;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #003366;
+}
+
+/* =======================
+   Projects Section
+========================== */
+.project {
+    display: inline-block;
+    margin: 20px;
+    background: #87b9d2;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: left;
+}
+
+#projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* =======================
+   Resume Section
+========================== */
+#resume {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .resume-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #1a00ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+  }
+  
+  .resume-button:hover {
+    background-color: #0000cc;
+  }
+  
+/* =======================
+   Contact Section
+========================== */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.contact-icons a {
+    color: #1b0202;
+    font-size: 34px;
+    transition: color 0.3s;
+}
+
+.contact-icons a:hover {
+    color: #ff8a00;
+}
+
+/* =======================
+   Wallet Connect Section
+========================== */
+#walletConnect {
+    text-align: center;
+    padding: 30px;
+}
+
+#walletConnect button {
+    background: #2c2fdd;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#walletConnect button:hover {
+    background-color: #e52e71;
+}
+
+/* =======================
+   Modal Styles
+========================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    overflow: auto;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 80px auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.modal h2 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #2c2fdd;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* =======================
+   Save Button
+========================== */
+#saveChangesBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#saveChangesBtn:hover {
+    background-color: #45a049;
+}
+
+/* =======================
+   Animations
+========================== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* =======================
+   Responsive Design
+========================== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    #updateBtn {
+        position: static;
+        margin-top: 10px;
+    }
+}
+
+.project {
+    display: inline-block;
+    margin: 20px;
+    background: rgba(135, 185, 210, 0.95); /* Add transparency for better background blending */
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: rgba(255, 255, 255, 0.3); /* Optional backdrop for section */
+    border-radius: 15px;
+}

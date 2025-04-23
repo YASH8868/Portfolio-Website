@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Decentralized Portfolio</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Hi! I am a software developer</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="updateBtn" style="display: none;">Update Portfolio</button>
+  </header>
+
+  <main>
+    <section id="about">
+      <img src="images/profile.jpg" alt="Profile Picture"/>
+      <h2 id="nameDisplay">Riya Rane</h2>
+      <p id="bioDisplay">Passionate software developer skilled in building innovative web and mobile solutions.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <p id="skillsDisplay">Languages: Java, Node.js, HTML, CSS</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div id="projects-container"></div>
+    </section>
+
+    <section id="resume">
+      <p>Download or view my resume below:</p>
+      <a href="Riya Rane.pdf" target="_blank" class="resume-button">View Resume</a>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p id="emailDisplay">raneriydd2812@gmail.com</p>
+      <div class="contact-icons">
+        <a id="emailLink" href="mailto:raneriydd2812@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        <a id="linkedinLink" href="https://www.linkedin.com/in/riya-r-842136279/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a id="githubLink" href="https://github.com/Riya2812" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </section>
+
+    <section id="walletConnect">
+      <button id="connectWallet">Connect Wallet</button>
+      <p id="walletStatus" style="color: red; margin-top: 10px;"></p>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="updateModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Update Portfolio</h2>
+
+      <label for="updateSectionSelector">Choose Section:</label>
+      <select id="updateSectionSelector">
+        <option value="">Select</option>
+        <option value="basic">Basic Info</option>
+        <option value="contact">Contact Info</option>
+        <option value="projects">Projects</option>
+      </select>
+
+      <div id="basicFields" style="display: none;">
+        <label>Name</label>
+        <input type="text" id="modalName" placeholder="Name"/>
+
+        <label>Bio</label>
+        <textarea id="modalBio" placeholder="Bio"></textarea>
+
+        <label>Skills</label>
+        <input type="text" id="modalSkills" placeholder="e.g. JavaScript, Blockchain"/>
+      </div>
+
+      <div id="contactFields" style="display: none;">
+        <label>Email</label>
+        <input type="email" id="modalEmail" placeholder="Email"/>
+
+        <label>LinkedIn</label>
+        <input type="url" id="modalLinkedin" placeholder="LinkedIn Profile URL"/>
+
+        <label>GitHub</label>
+        <input type="url" id="modalGithub" placeholder="GitHub Profile URL"/>
+      </div>
+
+      <div id="projectFields" style="display: none;">
+        <label for="projectTitle">Project Title</label>
+        <input type="text" id="projectTitle" placeholder="Enter project title"/>
+
+        <label for="projectDescription">Description</label>
+        <textarea id="projectDescription" placeholder="Enter project description"></textarea>
+
+        <input type="hidden" id="editProjectIndex"/>
+        <div id="projectList"></div>
+      </div>
+
+      <button id="saveChangesBtn">Save Changes</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
